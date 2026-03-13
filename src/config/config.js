@@ -1,0 +1,11 @@
+import dotenv from "dotenv"
+dotenv.config()
+
+export const config = {
+    MONGO_URI:process.env.MONGO_URI,
+    JWT_ACCESS_TOKEN_KEY:process.env.JWT_ACCESS_TOKEN_SCRET,
+    JWT_REFRESH_TOKEN_KEY:process.env.JWT_REFRESH_TOKEN_SCRET,
+    JWT_ACCESS_TOKEN_KEY_EXPIRE:process.env.JWT_ACCESS_TOKEN_SCRET_EXPIRE,
+    JWT_REFRESH_TOKEN_KEY_EXPIRE:process.env.JWT_REFRESH_TOKEN_SCRET_EXPIRE,
+    IMAGEKIT_PRIVATE_KEY:process.env.IMAGEKIT_PRIVATE_KEY
+}
