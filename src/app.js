@@ -11,4 +11,5 @@ app.use(cookieParser())
 
 app.use("/api/auth",authRouter)
 app.use("/api/artist",songRouter)
+app.use("/api/song",songRouter)
 export default app

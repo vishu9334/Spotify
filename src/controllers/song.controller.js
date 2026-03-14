@@ -31,6 +31,31 @@ export async function uploadSong(req, res) {
   });
 }
 
+export const getAllSong = async (req, res)=>{
+    const songs = await songModel.find();
+    res.status(200).json({
+      message: "Songs fetched successfully",
+      songs,
+    });
+  };
+
+  export const getSongById = async(req, res)=>{
+    const {id} = req.params;
+    if(!id){
+      return res.status(400).json({message:"Song id is required"})
+    }
+    const song = await songModel.findById(id);
+    if(!song){
+      return res.status(404).json({message:"Song not found"})
+    }
+    res.status(200).json({
+      message:"Song fetched successfully",
+      song,
+    })
+
+
+  }
+
 // const deleteSong = async(req, res)=>{
 //     const user = await User.findById(req.user?._id)
 //     if(!user){
